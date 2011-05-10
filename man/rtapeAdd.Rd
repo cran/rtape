@@ -7,7 +7,7 @@
 \description{Add object to the tape.}
 \details{This function serializes and appends a given object on the end of the tape file. If the tape file does not exists, it is created.}
 \note{Remember to use the same \code{fileFormat} value to all writes to a certain tape (or use default format guesser to guarantee this); if not, the tape will become unreadable. For the same reason, don't try to put custom headers/footers or append other data inside tape stream.
-This function is thread/process safe only if you use \code{safe} mode. However, in this case it may jam on a broken dirlock (for instance when the locking R process crashed during write); you may fix this problem maually by removing the locking dir. Its name is always \code{.rtape_<tape file name>_lock}. Waiting in retry mode is performed via \code{\link{Sys.sleep}}, so it is not a busy wait.}
+This function is thread/process safe only if you use \code{safe} mode. However, in this case it may jam on a broken dirlock (for instance when the locking R process crashed during write); you may fix this problem manually by removing the locking dir. Its name is always \code{.rtape_<tape file name>_lock}. Waiting in retry mode is performed via \code{\link{Sys.sleep}}, so it is not a busy wait.}
 \author{Miron B. Kursa \email{M.Kursa@icm.edu.pl}}
 \arguments{\item{fName}{Name of the tape file.}
 \item{what}{Object to be stored.}
